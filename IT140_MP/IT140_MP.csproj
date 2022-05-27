@@ -66,15 +66,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="php_client\nusoap\lib\changelog" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_main.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
     <AndroidResource Include="Resources\values\strings.xml" />
@@ -101,51 +97,20 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="System.Text.Json">
+      <Version>6.0.4</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.2.0.5" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.0.0.1" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="php_client\client.php" />
-    <Content Include="php_client\fetchdata.php" />
-    <Content Include="php_client\nusoap\lib\class.nusoap_base.php" />
-    <Content Include="php_client\nusoap\lib\class.soapclient.php" />
-    <Content Include="php_client\nusoap\lib\class.soap_fault.php" />
-    <Content Include="php_client\nusoap\lib\class.soap_parser.php" />
-    <Content Include="php_client\nusoap\lib\class.soap_server.php" />
-    <Content Include="php_client\nusoap\lib\class.soap_transport_http.php" />
-    <Content Include="php_client\nusoap\lib\class.soap_val.php" />
-    <Content Include="php_client\nusoap\lib\class.wsdl.php" />
-    <Content Include="php_client\nusoap\lib\class.wsdlcache.php" />
-    <Content Include="php_client\nusoap\lib\class.xmlschema.php" />
-    <Content Include="php_client\nusoap\lib\nusoap.php" />
-    <Content Include="php_client\nusoap\lib\nusoapmime.php" />
-    <Content Include="php_client\nusoap\samples\client1.php" />
-    <Content Include="php_client\nusoap\samples\client2.php" />
-    <Content Include="php_client\nusoap\samples\client3.php" />
-    <Content Include="php_client\nusoap\samples\getfile1client.php" />
-    <Content Include="php_client\nusoap\samples\getfile2client.php" />
-    <Content Include="php_client\nusoap\samples\index.html" />
-    <Content Include="php_client\nusoap\samples\mimeclient.php" />
-    <Content Include="php_client\nusoap\samples\sslclient.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient1.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient10.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient11.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient12.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient13.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient14.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient15.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient2.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient3.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient3b.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient3c.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient4.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient5.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient6.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient7.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient8.php" />
-    <Content Include="php_client\nusoap\samples\wsdlclient9.php" />
-    <Content Include="php_client\service.php" />
+    <AndroidResource Include="Resources\layout\Register.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ip_address.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
