@@ -61,9 +61,12 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.cs" />
-    <Compile Include="BookPage.cs" />
+    <Compile Include="OrdersAdapter.cs" />
+    <Compile Include="LoginActivity.cs" />
+    <Compile Include="BookActivity.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Orders.cs" />
+    <Compile Include="OrdersActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -121,6 +124,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\LoginLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\OrdersLayout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

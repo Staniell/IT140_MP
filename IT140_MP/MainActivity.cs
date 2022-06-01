@@ -12,7 +12,7 @@ using Android.Content;
 
 namespace IT140_MP
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class MainActivity : AppCompatActivity
     {
         EditText username, password, email;
@@ -50,7 +50,7 @@ namespace IT140_MP
 
         void LoginAccount(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(Login));
+            Intent i = new Intent(this, typeof(LoginActivity));
             StartActivity(i);
         }
         void RegisterAccount(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace IT140_MP
 
             if (res.Contains("Registered"))
             {
-                Intent i = new Intent(this, typeof(BookPage));
+                Intent i = new Intent(this, typeof(BookActivity));
                 i.PutExtra("Name", username.Text);
                 StartActivity(i);
             }
