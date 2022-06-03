@@ -61,8 +61,17 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <Compile Include="API_Commands.cs" />
     <Compile Include="HomeActivity.cs" />
+=======
+    <Compile Include="BackendBooksInput.cs" />
+    <Compile Include="BackendMainActivity.cs" />
+    <Compile Include="BackendManageBooks.cs" />
+    <Compile Include="BackendManageOrders.cs" />
+    <Compile Include="BackendStats.cs" />
+    <Compile Include="BackendLogin.cs" />
+>>>>>>> Stashed changes
     <Compile Include="OrdersAdapter.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="BookActivity.cs" />
@@ -135,12 +144,26 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <AndroidResource Include="Resources\layout\OrdersLayoutMain.xml">
+=======
+    <AndroidResource Include="Resources\layout\BackendMain.xml">
+>>>>>>> Stashed changes
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <AndroidResource Include="Resources\layout\HomeLayout.xml">
+=======
+    <AndroidResource Include="Resources\layout\BackendLoginLayout.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\BackendStatsLayout.xml">
+>>>>>>> Stashed changes
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
