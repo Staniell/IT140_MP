@@ -61,6 +61,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API_Commands.cs" />
     <Compile Include="OrdersAdapter.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="BookActivity.cs" />
@@ -129,6 +130,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\OrdersLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\OrdersLayoutMain.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

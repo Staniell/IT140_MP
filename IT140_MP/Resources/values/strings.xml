@@ -6,6 +6,8 @@
 	<string name="email">Email</string>
 	<string name="register">Register</string>
 	<string name="login">Login</string>
-
+	<string name="orders">Orders</string>
+	<string name="cancel">Cancel</string>
+	<string name="receive">Received</string>
 
 </resources>

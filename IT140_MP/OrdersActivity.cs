@@ -15,42 +15,46 @@ using System.IO;
 
 namespace IT140_MP
 {
-    [Activity(Label = "OrdersLayout", MainLauncher = true)]
+    [Activity(Label = "OrdersLayout", MainLauncher = true, ParentActivity = typeof(BookActivity))]
     public class OrdersActivity : Activity
     {
         private ListView ordersListView;
         private List<Orders> mlist;
         OrdersAdapter adapter;
+        TextView sum_order;
         HttpWebResponse response;
         HttpWebRequest request;
         string ip, res;
+        int total;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            SetContentView(Resource.Layout.OrdersLayout);
+            SetContentView(Resource.Layout.OrdersLayoutMain);
 
             AssetManager assets = this.Assets;
             using StreamReader sr = new StreamReader(assets.Open("ip_address.txt"));
             ip = sr.ReadToEnd();
 
-            fillData();
 
             ordersListView = FindViewById<ListView>(Resource.Id.orderListView);
+            sum_order = FindViewById<TextView>(Resource.Id.textView2);
+
+            fillData();
+
 
             
             adapter = new OrdersAdapter(this, mlist);
             ordersListView.Adapter = adapter;
-            ordersListView.ItemClick += Order_ItemClick;
         }
 
-        private void Order_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+/*        private void Order_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            var select = mlist[e.Position].Email + mlist[e.Position].Order_status;
+            var select = mlist[e.Position].Book_id;
 
-            /*Toast.MakeText(this, select, ToastLength.Long).Show();*/
-        }
+            Toast.MakeText(this, select, ToastLength.Long).Show();
+        }*/
 
         private void fillData()
         {
@@ -63,17 +67,24 @@ namespace IT140_MP
             using JsonDocument doc = JsonDocument.Parse(result);
             JsonElement root = doc.RootElement;
             mlist = new List<Orders>();
+
             for (int i = 0; i < root.GetArrayLength(); i++)
             {
 
                 mlist.Add(new Orders
                 {
                     Book_title = root[i].GetProperty("book_title").ToString(),
+                    Book_price = root[i].GetProperty("book_price").ToString(),
                     Order_status = root[i].GetProperty("order_status").ToString(),
+                    Order_id = root[i].GetProperty("order_id").ToString(),
+                    Book_id = root[i].GetProperty("book_id").ToString(),
                     Order_date = DateTime.Parse(root[i].GetProperty("order_date").ToString())
                 });
+                total += Convert.ToInt32(root[i].GetProperty("book_price").ToString());
             }
 
+
+            sum_order.Text = "Total Pending Order Price:"+total.ToString();
             
         }
 
