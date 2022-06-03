@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/email_txt" />
+
+
+    <TextView
+        android:text="@string/orders"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:layout_marginTop="15.2dp" 
+        android:textStyle="bold"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginTop="20.6dp">
+
+
+        <Button
+            android:text="@string/pending"
+            android:layout_width="179.4dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/pending_btn"
+            android:layout_marginLeft="17.5dp"/>
+        <Button
+            android:text="@string/done"
+            android:layout_width="179.4dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/done_btn"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="18.7dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:text="@string/buy"
+        android:layout_width="228.2dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/order_btn"
+        android:layout_gravity="center"
+        android:layout_marginTop="22.9dp" />
+
+    <Button
+        android:text="@string/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/log_btn"
+        android:layout_marginTop="111.3dp" />
+
+    
+
+</LinearLayout>

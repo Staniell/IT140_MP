@@ -41,13 +41,13 @@
 		android:id="@+id/password_reg" />
 	<Button
 		android:text="@string/register"
-		android:layout_width="247.6dp"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/button1" 
 	 android:layout_gravity="center"/>
 	<Button
-		android:text="I do not have an Account"
-		android:layout_width="247.6dp"
+		android:text="I already have an Account"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/button2"
 	android:layout_gravity="center"/>

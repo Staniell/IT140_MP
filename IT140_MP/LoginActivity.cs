@@ -15,7 +15,7 @@ using System.IO;
 
 namespace IT140_MP
 {
-    [Activity(Label = "Login Layout")]
+    [Activity(Label = "Login Layout", MainLauncher = true)]
     public class LoginActivity : Activity
     {
         string ip, res;
@@ -64,8 +64,9 @@ namespace IT140_MP
                 var u1 = root[0];
                 string searchedname = u1.GetProperty("username").ToString();
 
-                Intent i = new Intent(this, typeof(BookActivity));
+                Intent i = new Intent(this, typeof(HomeActivity));
                 i.PutExtra("Name", searchedname);
+                i.PutExtra("Email", email.Text);
                 StartActivity(i);
             }
 

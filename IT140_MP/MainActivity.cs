@@ -66,8 +66,9 @@ namespace IT140_MP
 
             if (res.Contains("Registered"))
             {
-                Intent i = new Intent(this, typeof(BookActivity));
+                Intent i = new Intent(this, typeof(HomeActivity));
                 i.PutExtra("Name", username.Text);
+                i.PutExtra("Email", email.Text);
                 StartActivity(i);
             }
         }

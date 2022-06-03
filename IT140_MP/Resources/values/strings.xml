@@ -6,8 +6,12 @@
 	<string name="email">Email</string>
 	<string name="register">Register</string>
 	<string name="login">Login</string>
-	<string name="orders">Orders</string>
+	<string name="orders">ORDERS</string>
 	<string name="cancel">Cancel</string>
 	<string name="receive">Received</string>
+	<string name="pending">Pending Orders</string>
+	<string name="done">Done Orders</string>
+	<string name="buy">Order Books</string>
+	<string name="logout">Log Out</string>
 
 </resources>

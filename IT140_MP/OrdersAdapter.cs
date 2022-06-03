@@ -8,6 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using Android.Content.Res;
+using System.Net;
+using System.IO;
+
 
 namespace IT140_MP
 {
@@ -15,7 +20,10 @@ namespace IT140_MP
     {
         public List<Orders> sList;
         private int sum_price;
+        HttpWebResponse response;
+        HttpWebRequest request;
         private Context sContext;
+        string res, ip;
         public OrdersAdapter(Context context, List<Orders> list)
         {
             sList = list;
@@ -52,6 +60,7 @@ namespace IT140_MP
                 TextView txtOrder_Status = row.FindViewById<TextView>(Resource.Id.order_status);
                 TextView txtOrder_Date = row.FindViewById<TextView>(Resource.Id.order_date);
                 TextView txtBook_Price = row.FindViewById<TextView>(Resource.Id.book_price);
+                TextView txtOrder_Id = row.FindViewById<TextView>(Resource.Id.order_id);
                 Button cancelButton = row.FindViewById<Button>(Resource.Id.button1);
                 Button receiveButton = row.FindViewById<Button>(Resource.Id.button2);
 
@@ -59,54 +68,19 @@ namespace IT140_MP
                 txtOrder_Status.Text = "Status: " + sList[position].Order_status;
                 txtBook_Title.Text = "Book Title: " + sList[position].Book_title;
                 txtOrder_Date.Text = "Order Date:" + sList[position].Order_date;
-               /* sum_price += Convert.ToInt32(sList[position].Book_price);
-*/
+                txtOrder_Id.Text = "Order ID:" + sList[position].Order_id;
                 cancelButton.Click += (sender, args) =>
                 {
-       
                     sList[position].Order_status = "Cancelled";
-
-
-                    sum_price = 0;
-                    
-                    for (int i = 0; i<sList.Count; i++)
-                    {
-                        sum_price += Convert.ToInt32(sList[i].Book_price);
-                    }
-                    Toast.MakeText(Application.Context, "pos: " + sList[position].Order_id + " Length: " + sList.Count +" Sum:" +sum_price, ToastLength.Short).Show();
-                    /*sList[position].Order_status = "Cancelled";*/
-                    /*sList.Remove(sList[position]);*/
-
+                    updateOrder("Cancelled", sList[position].Order_id);
                     this.NotifyDataSetChanged();
-
-                    row = LayoutInflater.From(sContext).Inflate(Resource.Layout.OrdersLayoutMain, null, false);
-                    TextView sum_order;
-                    sum_order = row.FindViewById<TextView>(Resource.Id.textView2);
-                    sum_order.Text = "450";
-
+                    
                 };
 
                 receiveButton.Click += (sender, args) =>
                 {
                     sList[position].Order_status = "Received";
-                    /*sList.Remove(sList[position]);*/
-                    /*                    List<Orders> newList = new List<Orders>();
-                                        for(int i = 0; i < sList.Count; i++)
-                                        {
-                                            if (sList[position].Order_id != sList[i].Order_id)
-                                                newList.Add(sList[position]);
-                                            else
-                                                newList.Add(new Orders
-                                                {
-                                                    Book_title = "999",
-                                                    Book_price = "99",
-                                                    Order_status = "99",
-                                                    Order_id = "99",
-                                                    Book_id = "99",
-                                                    Order_date = DateTime.Parse("2015-04-03 14:00:45")
-                                                });
-                                        }
-                                        sList = newList;*/
+                    updateOrder("Received", sList[position].Order_id);
                     this.NotifyDataSetChanged();
                     
                 };
@@ -120,5 +94,21 @@ namespace IT140_MP
             finally { }
             return row;
         }
+
+        void updateOrder(string status, string order_id)
+        {
+            AssetManager assets = Application.Context.Assets;
+            using StreamReader sr = new StreamReader(assets.Open("ip_address.txt"));
+            ip = sr.ReadToEnd();
+
+            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/update_order.php?email=" + "sampleEmail" + "&status_order=" + status + "&order_id=" + order_id);
+            response = (HttpWebResponse)request.GetResponse();
+            res = response.ProtocolVersion.ToString();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            var result = reader.ReadToEnd();
+
+            Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
+        }
+        
     }
 }

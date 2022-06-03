@@ -33,7 +33,7 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/button1" />
 	<Button
-		android:text="I already have an account"
+		android:text="I do not have an account"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/button2" />
