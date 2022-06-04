@@ -4,14 +4,6 @@
 	<string name="username">Username</string>
 	<string name="password">Password</string>
 	<string name="email">Email</string>
-	<string name="adminusername">Admin Username</string>
-	<string name="adminpassword">Admin Password</string>
-	<string name="backendtitle">Admin Panel</string>
-	<string name="backenddesc">Welcome to the Admin Panel</string>
-	<string name="backendstats">View Statistics</string>
-	<string name="backendorders">Manage Orders</string>
-	<string name="backendbooks">Manage Books</string>
-	<string name="backendlogout">Log-out</string>
 	<string name="register">Register</string>
 	<string name="login">Login</string>
 	<string name="orders">ORDERS</string>
@@ -21,5 +13,12 @@
 	<string name="done">Done Orders</string>
 	<string name="buy">Order Books</string>
 	<string name="logout">Log Out</string>
-
+	<string name="adminusername">Admin Username</string>
+	<string name="adminpassword">Admin Password</string>
+	<string name="backendtitle">Admin Panel</string>
+	<string name="backenddesc">Welcome to the Admin Panel</string>
+	<string name="backendstats">View Statistics</string>
+	<string name="backendorders">Manage Orders</string>
+	<string name="backendbooks">Manage Books</string>
+	<string name="backendlogout">Log-out</string>
 </resources>

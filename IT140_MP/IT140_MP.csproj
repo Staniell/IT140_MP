@@ -62,13 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API_Commands.cs" />
-    <Compile Include="HomeActivity.cs" />
-    <Compile Include="BackendBooksInput.cs" />
-    <Compile Include="BackendMainActivity.cs" />
-    <Compile Include="BackendManageBooks.cs" />
-    <Compile Include="BackendManageOrders.cs" />
-    <Compile Include="BackendStats.cs" />
     <Compile Include="BackendLogin.cs" />
+    <Compile Include="BackendMainActivity.cs" />
+    <Compile Include="BackendStats.cs" />
+    <Compile Include="HomeActivity.cs" />
     <Compile Include="OrdersAdapter.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="BookActivity.cs" />
@@ -141,13 +138,22 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\BackendMain.xml">
+    <AndroidResource Include="Resources\layout\OrdersLayoutMain.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\HomeLayout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\BackendLoginLayout.xml">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\BackendMain.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

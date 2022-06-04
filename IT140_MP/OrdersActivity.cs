@@ -15,7 +15,7 @@ using System.IO;
 
 namespace IT140_MP
 {
-    [Activity(Label = "OrdersLayout")]
+    [Activity(Label = "OrdersLayout", ParentActivity = typeof(BookActivity))]
     public class OrdersActivity : Activity
     {
         private ListView ordersListView;
@@ -59,7 +59,7 @@ namespace IT140_MP
         private void fillData()
         {
             request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/fetch_orders.php?email=" + "sampleEmail");
-                response = (HttpWebResponse)request.GetResponse();
+            response = (HttpWebResponse)request.GetResponse();
             res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             var result = reader.ReadToEnd();

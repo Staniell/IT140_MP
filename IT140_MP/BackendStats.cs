@@ -15,7 +15,7 @@ using System.Text;
 
 namespace IT140_MP
 {
-    [Activity(Label = "Admin Statistics", MainLauncher = true)]
+    [Activity(Label = "Admin Statistics")]
     public class BackendStats : Activity
     {
         TextView bookStats, orderStats;
@@ -65,12 +65,12 @@ namespace IT140_MP
         }
         void GoToManageBooksActivity(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(BackendManageBooks));
+            Intent i = new Intent(this, typeof(BackendMainActivity));
             StartActivity(i);
         }
         void GoToManageOrdersActivity(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(BackendManageOrders));
+            Intent i = new Intent(this, typeof(BackendMainActivity));
             StartActivity(i);
         }
     }

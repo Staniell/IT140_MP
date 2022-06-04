@@ -12,7 +12,7 @@ using Android.Content;
 
 namespace IT140_MP
 {
-    [Activity(Label = "Admin Dashboard")]
+    [Activity(Label = "Admin Dashboard", MainLauncher = true)]
     public class BackendMainActivity : Activity
     {
         Button adminStatsBtn, manageOrdersBtn, manageBooksBtn, logoutBtn;
@@ -40,12 +40,12 @@ namespace IT140_MP
         }
         void GoToManageBooksActivity(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(BackendManageBooks));
+            Intent i = new Intent(this, typeof(BackendMainActivity));
             StartActivity(i);
         }
         void GoToManageOrdersActivity(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(BackendManageOrders));
+            Intent i = new Intent(this, typeof(BackendMainActivity));
             StartActivity(i);
         }
         void LogoutAdmin(object sender, EventArgs e)
