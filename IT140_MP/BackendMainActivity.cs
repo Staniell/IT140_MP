@@ -12,7 +12,7 @@ using Android.Content;
 
 namespace IT140_MP
 {
-    [Activity(Label = "Admin Dashboard", MainLauncher = true)]
+    [Activity(Label = "Admin Dashboard")]
     public class BackendMainActivity : Activity
     {
         Button adminStatsBtn, manageOrdersBtn, manageBooksBtn, logoutBtn;

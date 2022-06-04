@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/home"
+    android:layout_gravity="center_horizontal">
 
     <TextView
         android:text=""
@@ -10,43 +13,54 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/email_txt" />
-
-
-    <TextView
-        android:text="@string/orders"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+    <ImageView
+        android:src="@drawable/logo"
+        android:layout_width="79.5dp"
+        android:layout_height="65.5dp"
+        android:layout_marginTop="-25dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/imageView2" />
+    <ImageView
+        android:src="@drawable/orders"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1"
-        android:gravity="center"
-        android:layout_marginTop="15.2dp" 
-        android:textStyle="bold"/>
-
+        android:layout_marginTop="-35dp"
+        android:id="@+id/imageView1" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
         android:minHeight="25px"
-        android:layout_width="match_parent"
+        android:layout_width="365.5dp"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1"
-        android:layout_marginTop="20.6dp">
+        android:layout_marginTop="100.6dp"
+        android:layout_gravity="center_horizontal">
 
 
         <Button
             android:text="@string/pending"
-            android:layout_width="179.4dp"
+            android:layout_width="159.0dp"
             android:layout_height="wrap_content"
             android:id="@+id/pending_btn"
+            android:backgroundTint="#bbdb98"
+            android:textColor="#977563"
             android:layout_marginLeft="17.5dp"/>
         <Button
             android:text="@string/done"
-            android:layout_width="179.4dp"
+            android:layout_width="143.0dp"
             android:layout_height="wrap_content"
             android:id="@+id/done_btn"
             android:layout_marginRight="0.0dp"
-            android:layout_marginLeft="18.7dp" />
+            android:backgroundTint="#bbdb98"
+            android:textColor="#977563"
+            android:layout_marginLeft="18.7dp"
+            />
 
+    
+        
+    
+        
     </LinearLayout>
 
     <Button
@@ -54,16 +68,22 @@
         android:layout_width="228.2dp"
         android:layout_height="wrap_content"
         android:id="@+id/order_btn"
+        android:backgroundTint="#bbdb98"
+        android:textColor="#977563"
         android:layout_gravity="center"
         android:layout_marginTop="22.9dp" />
 
     <Button
         android:text="@string/logout"
-        android:layout_width="match_parent"
+        android:layout_width="129.5dp"
         android:layout_height="wrap_content"
         android:id="@+id/log_btn"
-        android:layout_marginTop="111.3dp" />
+        android:layout_marginTop="310dp"
+        android:backgroundTint="#bbdb98"
+        android:textColor="#977563"
+        android:layout_gravity="center_horizontal"/>
 
-    
+
+
 
 </LinearLayout>
