@@ -3564,7 +3564,6 @@ namespace IT140_MP
 			public const int beginning = 2131230785;
 			
 			// aapt resource value: 0x7F080042
-<<<<<<< Updated upstream
 			public const int book_price = 2131230786;
 			
 			// aapt resource value: 0x7F080043
@@ -3794,7 +3793,6 @@ namespace IT140_MP
 			
 			// aapt resource value: 0x7F08008C
 			public const int log_btn = 2131230860;
-=======
 			public const int blocking = 2131230786;
 			
 			// aapt resource value: 0x7F080043
@@ -4024,7 +4022,6 @@ namespace IT140_MP
 			
 			// aapt resource value: 0x7F08008C
 			public const int list_item = 2131230860;
->>>>>>> Stashed changes
 			
 			// aapt resource value: 0x7F08008D
 			public const int masked = 2131230861;
@@ -4078,7 +4075,6 @@ namespace IT140_MP
 			public const int on = 2131230876;
 			
 			// aapt resource value: 0x7F08009D
-<<<<<<< Updated upstream
 			public const int orderListView = 2131230877;
 			
 			// aapt resource value: 0x7F08009E
@@ -4110,7 +4106,6 @@ namespace IT140_MP
 			
 			// aapt resource value: 0x7F0800A7
 			public const int pending_btn = 2131230887;
-=======
 			public const int orderBtn = 2131230877;
 			
 			// aapt resource value: 0x7F08009E
@@ -4142,7 +4137,6 @@ namespace IT140_MP
 			
 			// aapt resource value: 0x7F0800A7
 			public const int password_reg = 2131230887;
->>>>>>> Stashed changes
 			
 			// aapt resource value: 0x7F0800A8
 			public const int pin = 2131230888;
@@ -4274,7 +4268,6 @@ namespace IT140_MP
 			public const int start = 2131230929;
 			
 			// aapt resource value: 0x7F0800D2
-<<<<<<< Updated upstream
 			public const int stretch = 2131230930;
 			
 			// aapt resource value: 0x7F0800D3
@@ -4420,7 +4413,6 @@ namespace IT140_MP
 			
 			// aapt resource value: 0x7F080101
 			public const int wrap_content = 2131230977;
-=======
 			public const int statBtn = 2131230930;
 			
 			// aapt resource value: 0x7F0800D3
@@ -4569,7 +4561,6 @@ namespace IT140_MP
 			
 			// aapt resource value: 0x7F080102
 			public const int wrap_content = 2131230978;
->>>>>>> Stashed changes
 			
 			static Id()
 			{
@@ -4827,7 +4818,6 @@ namespace IT140_MP
 			public const int design_navigation_item_subheader = 2131427373;
 			
 			// aapt resource value: 0x7F0B002E
-<<<<<<< Updated upstream
 			public const int HomeLayout = 2131427374;
 			
 			// aapt resource value: 0x7F0B002F
@@ -4877,7 +4867,6 @@ namespace IT140_MP
 			
 			// aapt resource value: 0x7F0B003E
 			public const int support_simple_spinner_dropdown_item = 2131427390;
-=======
 			public const int design_navigation_menu = 2131427374;
 			
 			// aapt resource value: 0x7F0B002F
@@ -4930,7 +4919,6 @@ namespace IT140_MP
 			
 			// aapt resource value: 0x7F0B003F
 			public const int support_simple_spinner_dropdown_item = 2131427391;
->>>>>>> Stashed changes
 			
 			static Layout()
 			{
@@ -5058,7 +5046,6 @@ namespace IT140_MP
 			public const int adminusername = 2131558429;
 			
 			// aapt resource value: 0x7F0D001F
-<<<<<<< Updated upstream
 			public const int buy = 2131558431;
 			
 			// aapt resource value: 0x7F0D0020
@@ -5144,7 +5131,6 @@ namespace IT140_MP
 			
 			// aapt resource value: 0x7F0D003B
 			public const int username = 2131558459;
-=======
 			public const int appbar_scrolling_view_behavior = 2131558431;
 			
 			// aapt resource value: 0x7F0D001E
@@ -5236,7 +5222,6 @@ namespace IT140_MP
 			
 			// aapt resource value: 0x7F0D003C
 			public const int username = 2131558460;
->>>>>>> Stashed changes
 			
 			static String()
 			{
