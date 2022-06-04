@@ -58,6 +58,7 @@
         android:layout_height="36.5dp"
         android:textColor="#f85201"
         android:paddingLeft="10dp"
+        android:id="@+id/editText2"
         android:background="@drawable/edittextbox"
         android:layout_marginBottom="@dimen/abc_action_bar_content_inset_material"
         tools:ignore="HardcodedColor"/>

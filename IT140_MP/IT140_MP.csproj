@@ -65,6 +65,8 @@
     <Compile Include="BackendLogin.cs" />
     <Compile Include="BackendMainActivity.cs" />
     <Compile Include="BackendStats.cs" />
+    <Compile Include="ReceivedOrdersAdapter.cs" />
+    <Compile Include="ReceivedOrdersActivity.cs" />
     <Compile Include="HomeActivity.cs" />
     <Compile Include="OrdersAdapter.cs" />
     <Compile Include="LoginActivity.cs" />
@@ -182,6 +184,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Orders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ReceivedOrdersLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ReceivedOrdersLayoutMain.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -46,7 +46,7 @@ namespace IT140_MP
             //To do
             doneBtn.Click += (sender, args) =>
             {
-                Intent i = new Intent(this, typeof(OrdersActivity));
+                Intent i = new Intent(this, typeof(ReceivedOrdersActivity));
                 StartActivity(i);
             };
 
