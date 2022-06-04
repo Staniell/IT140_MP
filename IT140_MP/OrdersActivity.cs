@@ -15,11 +15,7 @@ using System.IO;
 
 namespace IT140_MP
 {
-<<<<<<< Updated upstream
-    [Activity(Label = "OrdersLayout", ParentActivity = typeof(BookActivity))]
-=======
     [Activity(Label = "OrdersLayout")]
->>>>>>> Stashed changes
     public class OrdersActivity : Activity
     {
         private ListView ordersListView;
