@@ -14,48 +14,55 @@
         android:textAlignment="center"
         android:textFontWeight="800" />
     <TextView
-        android:text="Order Statistics"
+        android:text="Add/Edit Placeholder"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:minWidth="25px"
         android:minHeight="25px"
-        android:id="@+id/orderstatstitle"/>
+        android:id="@+id/bookInputTitle" />
     <TextView
-        android:text="OrderStats"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Book Name"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:id="@+id/orderstats"/>
-    <Button
-        android:text="@string/backendorders"
+        android:id="@+id/bookNameLabel" />
+    <EditText
+        android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/orderBtn" />
+        android:id="@+id/bookNameInput"/>
     <TextView
-        android:text="Book Statistics"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Book Price"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:id="@+id/bookstatstitle"
-        android:layout_marginTop="63.0dp" />
-    <TextView
-        android:text="BookStats"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/bookPriceLabel" />
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:id="@+id/bookstats"/>
-    <Button
-        android:text="@string/backendbooks"
-        android:layout_width="match_parent"
+        android:id="@+id/bookPriceInput" />
+    <LinearLayout
+        android:id="@+id/booksinputlayoutbuttons"
         android:layout_height="wrap_content"
-        android:id="@+id/bookBtn" />
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/addeditBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="">
+        </Button>
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel">
+        </Button>
+    </LinearLayout>
 
 </LinearLayout>

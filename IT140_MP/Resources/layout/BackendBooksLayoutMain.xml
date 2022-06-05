@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="@string/backendtitle"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textSize="100px"
+        android:textAlignment="center"
+        android:textFontWeight="800" />
+    <TextView
+        android:text="Book List"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:id="@+id/textView6" />
+    <Button
+        android:text="Add New Book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addNewBookBtn" />
+    <ListView  
+       android:id="@+id/bookListView"  
+       android:layout_width="match_parent"  
+       android:layout_height="wrap_content">   
+     </ListView>
+</LinearLayout>

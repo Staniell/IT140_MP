@@ -15,7 +15,7 @@ using System.IO;
 
 namespace IT140_MP
 {
-    [Activity(Label = "Login Layout", MainLauncher = true)]
+    [Activity(Label = "Login Layout")]
     public class LoginActivity : Activity
     {
         string ip, res;

@@ -40,12 +40,12 @@ namespace IT140_MP
         }
         void GoToManageBooksActivity(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(BackendMainActivity));
+            Intent i = new Intent(this, typeof(BackendBooksActivity));
             StartActivity(i);
         }
         void GoToManageOrdersActivity(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(BackendMainActivity));
+            Intent i = new Intent(this, typeof(BackendOrdersActivity));
             StartActivity(i);
         }
         void LogoutAdmin(object sender, EventArgs e)
