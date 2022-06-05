@@ -12,7 +12,7 @@ using Android.Content;
 
 namespace IT140_MP
 {
-    [Activity(Label = "Admin Dashboard")]
+    [Activity(Label = "Add/Edit Books", NoHistory = true)]
     public class BackendBooksInput : Activity
     {
 
@@ -29,7 +29,7 @@ namespace IT140_MP
             SetContentView(Resource.Layout.BackendBooksInputLayout);
             EditText bookName = FindViewById<EditText>(Resource.Id.bookNameInput);
             EditText bookPrice = FindViewById<EditText>(Resource.Id.bookPriceInput);
-            EditText bookImage = FindViewById<EditText>(Resource.Id.bookImageTxt);
+            EditText bookImage = FindViewById<EditText>(Resource.Id.bookImageInput);
             TextView bookPageTitle = FindViewById<TextView>(Resource.Id.bookInputTitle);
             Button applyButton = FindViewById<Button>(Resource.Id.addeditBtn);
             Button cancelButton = FindViewById<Button>(Resource.Id.cancelButton);
@@ -51,8 +51,7 @@ namespace IT140_MP
         }
         void GoBack(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(BackendBooksActivity));
-            StartActivity(i);
+            Finish();
         }
         void GetInputField(string book_id, EditText bName, EditText bPrice, EditText bImage)
         {
@@ -92,8 +91,7 @@ namespace IT140_MP
             var result = reader.ReadToEnd();
 
             Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
-            Intent i = new Intent(this, typeof(BackendBooksActivity));
-            StartActivity(i);
+            Finish();
         }
         void AddBook(EditText bName, EditText bPrice, EditText bImage)
         {
@@ -101,15 +99,17 @@ namespace IT140_MP
             using StreamReader sr = new StreamReader(assets.Open("ip_address.txt"));
             ip = sr.ReadToEnd();
 
-            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/add_book.php?book_name=" + bName.Text + "&book_price=" + bPrice.Text + "&book_img="+ bImage.Text);
+            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/add_book.php?book_name=" + bName.Text + "&book_price=" + bPrice.Text + "&book_img=" + bImage.Text);
             response = (HttpWebResponse)request.GetResponse();
             res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             var result = reader.ReadToEnd();
 
             Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
-            Intent i = new Intent(this, typeof(BackendBooksActivity));
-            StartActivity(i);
+
+            Intent i = new Intent();
+            i.PutExtra("refreshdata", "refreshdata");
+            Finish();
         }
     }
 }

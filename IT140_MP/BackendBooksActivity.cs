@@ -27,6 +27,10 @@ namespace IT140_MP
         string ip, res;
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            if (Intent.Extras != null)
+            {
+                adapter.NotifyDataSetChanged();
+            }
             base.OnCreate(savedInstanceState);
 
             // Create your application here
@@ -71,6 +75,7 @@ namespace IT140_MP
                     Book_id = root[i].GetProperty("book_id").ToString(),
                     Book_title = root[i].GetProperty("book_title").ToString(),
                     Book_price = root[i].GetProperty("book_price").ToString(),
+                    Book_img = root[i].GetProperty("book_img").ToString(),
                 });
             }
 

@@ -65,19 +65,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@android:color/holo_orange_light"
             android:text="Ship Order"
-            android:clickable="false" >
+            android:backgroundTint="@android:color/darker_gray"
+            android:enabled="false">
         </Button>
         <Button
             android:id="@+id/shipCancelBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@android:color/holo_red_light"
             android:text="Cancel Order"
-            android:clickable="true"
-            android:enabled="true" >
+            android:backgroundTint="@android:color/darker_gray"
+            android:enabled="false">
         </Button>
     </LinearLayout>
 </LinearLayout>

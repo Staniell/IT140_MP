@@ -51,11 +51,21 @@ namespace IT140_MP
                 }
                 TextView txtBook_Title = row.FindViewById<TextView>(Resource.Id.bookNameList);
                 TextView txtBook_Price = row.FindViewById<TextView>(Resource.Id.bookPriceList);
+                ImageView imgBook = row.FindViewById<ImageView>(Resource.Id.bookImageList);
                 Button editButton = row.FindViewById<Button>(Resource.Id.bookEditBtn);
                 Button deleteButton = row.FindViewById<Button>(Resource.Id.bookDeleteBtn);
-
+                string resource = (sList[position].Book_img).ToString();
                 txtBook_Title.Text = sList[position].Book_title;
                 txtBook_Price.Text = "₱ " + sList[position].Book_price;
+                if (resource == "empty")
+                {
+                    imgBook.SetImageResource(Resource.Drawable.NoImage);
+                }
+                else
+                {
+                    int resourceId = (int)typeof(Resource.Drawable).GetField(resource).GetValue(null);
+                    imgBook.SetImageResource(resourceId);
+                }
                 editButton.Click += (sender, args) => this.updateBook(sList[position].Book_id);
                 deleteButton.Click += (sender, args) =>
                 {
@@ -90,8 +100,6 @@ namespace IT140_MP
             var result = reader.ReadToEnd();
 
             Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
-            Intent i = new Intent(sContext, typeof(BackendBooksActivity));
-            sContext.StartActivity(i);
         }
     }
 }

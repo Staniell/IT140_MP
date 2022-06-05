@@ -38,6 +38,11 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <MandroidI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -207,12 +212,11 @@
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
-    <ItemGroup>
-      <AndroidResource Include="Resources\layout\BackendOrdersLayout.xml">
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\BackendOrdersLayout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
-
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\HarryPotter.jpg" />
   </ItemGroup>
@@ -247,7 +251,7 @@
     <AndroidResource Include="Resources\drawable\TheLordOfTheRings.jpg" />
   </ItemGroup>
   <ItemGroup>
-  <AndroidResource Include="Resources\layout\BackendBooksLayout.xml">
+    <AndroidResource Include="Resources\layout\BackendBooksLayout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

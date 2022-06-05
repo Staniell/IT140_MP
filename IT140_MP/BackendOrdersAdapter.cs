@@ -65,38 +65,25 @@ namespace IT140_MP
                 txtOrder_Date.Text = "" + sList[position].Order_date;
                 if (sList[position].Order_status == "Shipped" || sList[position].Order_status == "Cancelled" || sList[position].Order_status == "Received")
                 {
-                    shipButton.Enabled = false;
                     shipButton.Visibility = ViewStates.Gone;
-                    cancelButton.Enabled = false;
                     cancelButton.Visibility = ViewStates.Gone;
-/*                    cancelButton.Background.SetTint(Android.Graphics.Color.DarkGray);
-                    shipButton.Background.SetTint(Android.Graphics.Color.DarkGray);*/
                 }
                 cancelButton.Click += (sender, args) =>
                 {
                     sList[position].Order_status = "Cancelled";
                     updateOrder(sList[position].Email, "Cancelled", sList[position].Order_id);
-                    shipButton.Enabled = false;
-                    cancelButton.Enabled = false;
                     shipButton.Visibility = ViewStates.Gone;
                     cancelButton.Visibility = ViewStates.Gone;
                     this.NotifyDataSetChanged();
 
                 };
-
-                shipButton.Click += (sender, args) =>
-                {
+                shipButton.Click += (sender, args) => {
                     sList[position].Order_status = "Shipped";
                     updateOrder(sList[position].Email, "Shipped", sList[position].Order_id);
-                    shipButton.Clickable = false;
-                    cancelButton.Clickable = false;
                     shipButton.Visibility = ViewStates.Gone;
                     cancelButton.Visibility = ViewStates.Gone;
                     this.NotifyDataSetChanged();
-
                 };
-
-
             }
             catch (Exception ex)
             {
@@ -118,7 +105,8 @@ namespace IT140_MP
             StreamReader reader = new StreamReader(response.GetResponseStream());
             var result = reader.ReadToEnd();
 
-            Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
+            Toast.MakeText(Application.Context, "http://{ip}/IT140P/REST/update_order.php?email=" + userEmail + "&status_order=" + status + "&order_id=" + order_id, ToastLength.Short).Show();
+            
         }
 
     }
