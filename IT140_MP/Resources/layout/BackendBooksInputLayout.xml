@@ -43,6 +43,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bookPriceInput" />
+    <TextView
+        android:text="Book Cover"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bookImageLabel" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bookImageTxt" />
     <LinearLayout
         android:id="@+id/booksinputlayoutbuttons"
         android:layout_height="wrap_content"

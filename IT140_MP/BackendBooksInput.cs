@@ -29,6 +29,7 @@ namespace IT140_MP
             SetContentView(Resource.Layout.BackendBooksInputLayout);
             EditText bookName = FindViewById<EditText>(Resource.Id.bookNameInput);
             EditText bookPrice = FindViewById<EditText>(Resource.Id.bookPriceInput);
+            EditText bookImage = FindViewById<EditText>(Resource.Id.bookImageTxt);
             TextView bookPageTitle = FindViewById<TextView>(Resource.Id.bookInputTitle);
             Button applyButton = FindViewById<Button>(Resource.Id.addeditBtn);
             Button cancelButton = FindViewById<Button>(Resource.Id.cancelButton);
@@ -37,14 +38,14 @@ namespace IT140_MP
                 book_id = Intent.GetStringExtra("book_id");
                 bookPageTitle.Text = "Edit Book Information";
                 applyButton.Text = "Apply";
-                this.GetInputField(book_id, bookName, bookPrice);
-                applyButton.Click += (sender, args) => this.UpdateBook(book_id, bookName, bookPrice);
+                this.GetInputField(book_id, bookName, bookPrice, bookImage);
+                applyButton.Click += (sender, args) => this.UpdateBook(book_id, bookName, bookPrice, bookImage);
             }
             else
             {
                 bookPageTitle.Text = "Add New Book";
                 applyButton.Text = "Add Book";
-                applyButton.Click += (sender, args) => this.AddBook(bookName, bookPrice);
+                applyButton.Click += (sender, args) => this.AddBook(bookName, bookPrice, bookImage);
             }
             cancelButton.Click += this.GoBack;
         }
@@ -53,7 +54,7 @@ namespace IT140_MP
             Intent i = new Intent(this, typeof(BackendBooksActivity));
             StartActivity(i);
         }
-        void GetInputField(string book_id, EditText bName, EditText bPrice)
+        void GetInputField(string book_id, EditText bName, EditText bPrice, EditText bImage)
         {
             AssetManager assets = Application.Context.Assets;
             using StreamReader sr = new StreamReader(assets.Open("ip_address.txt"));
@@ -71,19 +72,20 @@ namespace IT140_MP
                 var u1 = root[0];
                 bName.Text = u1.GetProperty("book_title").ToString();
                 bPrice.Text = u1.GetProperty("book_price").ToString();
+                bImage.Text = u1.GetProperty("book_img").ToString();
             }
             catch (Exception)
             {
                 Toast.MakeText(this, "No Records!", ToastLength.Long).Show();
             }
         }
-        void UpdateBook(string book_id, EditText bName, EditText bPrice)
+        void UpdateBook(string book_id, EditText bName, EditText bPrice, EditText bImage)
         {
             AssetManager assets = Application.Context.Assets;
             using StreamReader sr = new StreamReader(assets.Open("ip_address.txt"));
             ip = sr.ReadToEnd();
 
-            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/update_book.php?book_id=" + book_id +"&book_name=" + bName.Text + "&book_price=" + bPrice.Text);
+            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/update_book.php?book_id=" + book_id +"&book_name=" + bName.Text + "&book_price=" + bPrice.Text + "&book_img=" + bImage.Text);
             response = (HttpWebResponse)request.GetResponse();
             res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
@@ -93,13 +95,13 @@ namespace IT140_MP
             Intent i = new Intent(this, typeof(BackendBooksActivity));
             StartActivity(i);
         }
-        void AddBook(EditText bName, EditText bPrice)
+        void AddBook(EditText bName, EditText bPrice, EditText bImage)
         {
             AssetManager assets = Application.Context.Assets;
             using StreamReader sr = new StreamReader(assets.Open("ip_address.txt"));
             ip = sr.ReadToEnd();
 
-            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/add_book.php?book_name=" + bName.Text + "&book_price=" + bPrice.Text);
+            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/add_book.php?book_name=" + bName.Text + "&book_price=" + bPrice.Text + "&book_img="+ bImage.Text);
             response = (HttpWebResponse)request.GetResponse();
             res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());

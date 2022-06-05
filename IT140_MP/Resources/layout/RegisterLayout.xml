@@ -2,55 +2,96 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+	xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+	android:background="@drawable/circles">
     
+	<ImageView
+        android:src="@drawable/logo"
+        android:layout_width="99.0dp"
+        android:layout_height="101.5dp"
+        android:id="@+id/imageView1"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="-20.5dp"
+        android:layout_marginTop="40.0dp" 
+        />
+
     <TextView
         android:text="@string/username"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_width="321.5dp"
         android:minWidth="25px"
         android:minHeight="25px"
-        android:id="@+id/textView1" />
+        android:id="@+id/textView1" 
+        android:layout_gravity="center_horizontal"
+        />
     <EditText
         android:inputType="text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/username_reg" />
+        android:id="@+id/username_reg" 
+		android:layout_width="336.5dp"
+        android:layout_height="36.5dp"
+        android:textColor="#f85201"
+        android:paddingLeft="10dp"
+        android:background="@drawable/edittextbox"
+        android:layout_marginBottom="@dimen/abc_text_size_body_2_material"
+        tools:ignore="HardcodedColor"/>
+
+
 	<TextView
 		android:text="@string/email"
+        android:layout_width="321.5dp"
 		android:textAppearance="?android:attr/textAppearanceLarge"
-		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView2" />
 	<EditText
 		android:inputType="textEmailAddress"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/email_reg" />
+		android:id="@+id/email_reg"		
+		android:layout_width="336.5dp"
+        android:layout_height="36.5dp"
+        android:textColor="#f85201"
+        android:paddingLeft="10dp"
+        android:background="@drawable/edittextbox"
+        android:layout_marginBottom="@dimen/abc_text_size_body_2_material"
+        tools:ignore="HardcodedColor"/>
+
+
 	<TextView
 		android:text="@string/password"
 		android:textAppearance="?android:attr/textAppearanceLarge"
-		android:layout_width="match_parent"
+		android:layout_width="321.5dp"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView3" />
 	<EditText
 		android:inputType="textPassword"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/password_reg" />
+		android:id="@+id/password_reg" 		
+        android:layout_width="336.5dp"
+        android:layout_height="36.5dp"
+        android:textColor="#f85201"
+        android:paddingLeft="10dp"
+        android:background="@drawable/edittextbox"
+        android:layout_marginBottom="@dimen/abc_text_size_body_2_material"
+        tools:ignore="HardcodedColor"/>
+
+
+
 	<Button
 		android:text="@string/register"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:layout_width="131.0dp"
+        android:textFontWeight="600"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ff7f27"
 		android:id="@+id/button1" 
-	 android:layout_gravity="center"/>
+	    />
 	<Button
 		android:text="I already have an Account"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/button2"
-	android:layout_gravity="center"/>
+		android:layout_width="250.0dp"
+        android:textFontWeight="600"
+        android:layout_height="wrap_content"
+        android:textColor="#ffff"
+        android:backgroundTint="#ff7f27"
+		android:id="@+id/button2"/>
 	
 
 </LinearLayout>
