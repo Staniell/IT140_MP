@@ -21,4 +21,6 @@
 	<string name="backendorders">Manage Orders</string>
 	<string name="backendbooks">Manage Books</string>
 	<string name="backendlogout">Log-out</string>
+	<string name="bookName">Book Name</string>
+	<string name="bookPrice">Price</string>
 </resources>
