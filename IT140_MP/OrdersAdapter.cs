@@ -19,7 +19,6 @@ namespace IT140_MP
     class OrdersAdapter : BaseAdapter<Orders>
     {
         public List<Orders> sList;
-        private int sum_price;
         HttpWebResponse response;
         HttpWebRequest request;
         private Context sContext;
@@ -64,23 +63,33 @@ namespace IT140_MP
                 Button cancelButton = row.FindViewById<Button>(Resource.Id.button1);
                 Button receiveButton = row.FindViewById<Button>(Resource.Id.button2);
 
-                txtBook_Price.Text = "Price: " + sList[position].Book_price;
+                txtBook_Price.Text = "Price: ₱" + sList[position].Book_price;
                 txtOrder_Status.Text = "Status: " + sList[position].Order_status;
                 txtBook_Title.Text = "Book Title: " + sList[position].Book_title;
                 txtOrder_Date.Text = "Order Date:" + sList[position].Order_date;
                 txtOrder_Id.Text = "Order ID:" + sList[position].Order_id;
+
+                if (sList[position].Order_status == "Shipped")
+                {
+                    cancelButton.Enabled = false;
+                    cancelButton.Visibility = ViewStates.Invisible;
+                }
+
                 cancelButton.Click += (sender, args) =>
                 {
                     sList[position].Order_status = "Cancelled";
                     updateOrder("Cancelled", sList[position].Order_id);
+                    cancelButton.Visibility = ViewStates.Invisible;
+                    receiveButton.Visibility = ViewStates.Invisible;
                     this.NotifyDataSetChanged();
-                    
                 };
 
                 receiveButton.Click += (sender, args) =>
                 {
                     sList[position].Order_status = "Received";
                     updateOrder("Received", sList[position].Order_id);
+                    cancelButton.Visibility = ViewStates.Invisible;
+                    receiveButton.Visibility = ViewStates.Invisible;
                     this.NotifyDataSetChanged();
                     
                 };

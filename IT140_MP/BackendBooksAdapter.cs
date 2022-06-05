@@ -55,7 +55,7 @@ namespace IT140_MP
                 Button deleteButton = row.FindViewById<Button>(Resource.Id.bookDeleteBtn);
 
                 txtBook_Title.Text = sList[position].Book_title;
-                txtBook_Price.Text = "Php " + sList[position].Book_price;
+                txtBook_Price.Text = "₱ " + sList[position].Book_price;
                 editButton.Click += (sender, args) => this.updateBook(sList[position].Book_id);
                 deleteButton.Click += (sender, args) =>
                 {

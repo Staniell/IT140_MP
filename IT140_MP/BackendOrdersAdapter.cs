@@ -59,16 +59,18 @@ namespace IT140_MP
                 Button shipButton = row.FindViewById<Button>(Resource.Id.shipOrderBtn);
                 
                 txtEmail.Text = sList[position].Email;
-                txtBook_Price.Text = "Php " + sList[position].Book_price;
+                txtBook_Price.Text = "₱" + sList[position].Book_price;
                 txtOrder_Status.Text = "Status: " + sList[position].Order_status;
                 txtBook_Title.Text = "Book Title: " + sList[position].Book_title;
                 txtOrder_Date.Text = "" + sList[position].Order_date;
-                if (sList[position].Order_status == "Shipped" || sList[position].Order_status == "Cancelled")
+                if (sList[position].Order_status == "Shipped" || sList[position].Order_status == "Cancelled" || sList[position].Order_status == "Received")
                 {
                     shipButton.Enabled = false;
-                    shipButton.Background.SetTint(Android.Graphics.Color.DarkGray);
+                    shipButton.Visibility = ViewStates.Gone;
                     cancelButton.Enabled = false;
-                    cancelButton.Background.SetTint(Android.Graphics.Color.DarkGray);
+                    cancelButton.Visibility = ViewStates.Gone;
+/*                    cancelButton.Background.SetTint(Android.Graphics.Color.DarkGray);
+                    shipButton.Background.SetTint(Android.Graphics.Color.DarkGray);*/
                 }
                 cancelButton.Click += (sender, args) =>
                 {
@@ -76,6 +78,8 @@ namespace IT140_MP
                     updateOrder(sList[position].Email, "Cancelled", sList[position].Order_id);
                     shipButton.Enabled = false;
                     cancelButton.Enabled = false;
+                    shipButton.Visibility = ViewStates.Gone;
+                    cancelButton.Visibility = ViewStates.Gone;
                     this.NotifyDataSetChanged();
 
                 };
@@ -86,6 +90,8 @@ namespace IT140_MP
                     updateOrder(sList[position].Email, "Shipped", sList[position].Order_id);
                     shipButton.Clickable = false;
                     cancelButton.Clickable = false;
+                    shipButton.Visibility = ViewStates.Gone;
+                    cancelButton.Visibility = ViewStates.Gone;
                     this.NotifyDataSetChanged();
 
                 };

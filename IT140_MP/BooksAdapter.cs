@@ -65,7 +65,7 @@ namespace IT140_MP
                     imgBook.SetImageResource(resourceId);
                 }
                 txtBook_Title.Text = sList[position].Book_title;
-                txtBook_Price.Text = sList[position].Book_price;
+                txtBook_Price.Text = "₱"+ sList[position].Book_price;
                 
             }
             catch (Exception ex)

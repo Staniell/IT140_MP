@@ -15,7 +15,7 @@ using System.IO;
 
 namespace IT140_MP
 {
-    [Activity(Label = "Admin Login", MainLauncher = true)]
+    [Activity(Label = "Admin Login")]
     public class BackendLogin : Activity
     {
         string ip, res;
