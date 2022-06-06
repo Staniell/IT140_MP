@@ -16,6 +16,17 @@
         android:layout_marginBottom="-20.5dp"
         android:layout_marginTop="40.0dp" 
         />
+    <TextView
+        android:text="REGISTER"
+        android:textColor="#008080"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="25dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4" />
 
     <TextView
         android:text="@string/username"
@@ -34,7 +45,7 @@
         android:layout_height="36.5dp"
         android:textColor="#f85201"
         android:paddingLeft="10dp"
-        android:background="@drawable/edittextbox"
+        android:background="@drawable/edittextbox2"
         android:layout_marginBottom="@dimen/abc_text_size_body_2_material"
         tools:ignore="HardcodedColor"/>
 
@@ -52,7 +63,7 @@
         android:layout_height="36.5dp"
         android:textColor="#f85201"
         android:paddingLeft="10dp"
-        android:background="@drawable/edittextbox"
+        android:background="@drawable/edittextbox2"
         android:layout_marginBottom="@dimen/abc_text_size_body_2_material"
         tools:ignore="HardcodedColor"/>
 
@@ -70,7 +81,7 @@
         android:layout_height="36.5dp"
         android:textColor="#f85201"
         android:paddingLeft="10dp"
-        android:background="@drawable/edittextbox"
+        android:background="@drawable/edittextbox2"
         android:layout_marginBottom="@dimen/abc_text_size_body_2_material"
         tools:ignore="HardcodedColor"/>
 
@@ -78,10 +89,11 @@
 
 	<Button
 		android:text="@string/register"
+        android:layout_marginTop="20dp"
 		android:layout_width="131.0dp"
         android:textFontWeight="600"
         android:layout_height="wrap_content"
-        android:backgroundTint="#ff7f27"
+        android:backgroundTint="#008080"
 		android:id="@+id/button1" 
 	    />
 	<Button
@@ -90,7 +102,7 @@
         android:textFontWeight="600"
         android:layout_height="wrap_content"
         android:textColor="#ffff"
-        android:backgroundTint="#ff7f27"
+        android:backgroundTint="#008080"
 		android:id="@+id/button2"/>
 	
 

@@ -2,9 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/books2"
+    >
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listViewBooks" />
+        android:id="@+id/listViewBooks"
+        android:layout_marginTop="103dp"
+        android:background="#fbe8c9"/>
 </LinearLayout>
