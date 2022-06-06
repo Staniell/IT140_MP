@@ -51,6 +51,8 @@ namespace IT140_MP
         }
         void GoBack(object sender, EventArgs e)
         {
+            Intent i = new Intent(this, typeof(BackendBooksActivity));
+            StartActivity(i);
             Finish();
         }
         void GetInputField(string book_id, EditText bName, EditText bPrice, EditText bImage)
@@ -91,6 +93,8 @@ namespace IT140_MP
             var result = reader.ReadToEnd();
 
             Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
+            Intent i = new Intent(this, typeof(BackendBooksActivity));
+            StartActivity(i);
             Finish();
         }
         void AddBook(EditText bName, EditText bPrice, EditText bImage)
@@ -107,8 +111,8 @@ namespace IT140_MP
 
             Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
 
-            Intent i = new Intent();
-            i.PutExtra("refreshdata", "refreshdata");
+            Intent i = new Intent(this, typeof(BackendBooksActivity));
+            StartActivity(i);
             Finish();
         }
     }
