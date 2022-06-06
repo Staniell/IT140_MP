@@ -32,6 +32,12 @@
             android:layout_weight="1"
             android:textAlignment="viewEnd"/>
     </LinearLayout>
+        <TextView
+        android:text="Address"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/home_add" />
     <LinearLayout
         android:id="@+id/orderstatusdatelayout"
         android:layout_height="wrap_content"
@@ -54,6 +60,8 @@
             android:id="@+id/orderDateList"
             android:textAlignment="viewEnd" />
     </LinearLayout>
+
+
     <LinearLayout
         android:id="@+id/bookslayoutbuttons"
         android:layout_height="wrap_content"

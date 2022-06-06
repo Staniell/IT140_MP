@@ -55,6 +55,7 @@ namespace IT140_MP
                 TextView txtOrder_Status = row.FindViewById<TextView>(Resource.Id.orderStatusList);
                 TextView txtOrder_Date = row.FindViewById<TextView>(Resource.Id.orderDateList);
                 TextView txtBook_Price = row.FindViewById<TextView>(Resource.Id.orderBookPriceList);
+                TextView txtAddress = row.FindViewById<TextView>(Resource.Id.home_add);
                 Button cancelButton = row.FindViewById<Button>(Resource.Id.shipCancelBtn);
                 Button shipButton = row.FindViewById<Button>(Resource.Id.shipOrderBtn);
                 
@@ -63,6 +64,7 @@ namespace IT140_MP
                 txtOrder_Status.Text = "Status: " + sList[position].Order_status;
                 txtBook_Title.Text = "Book Title: " + sList[position].Book_title;
                 txtOrder_Date.Text = "" + sList[position].Order_date;
+                txtAddress.Text = "Address:" + sList[position].Address;
                 if (!cancelButton.HasOnClickListeners && !shipButton.HasOnClickListeners)
                 {
                     if (sList[position].Order_status != "Pending")

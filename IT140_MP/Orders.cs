@@ -13,7 +13,7 @@ namespace IT140_MP
 {
     class Orders
     {
-        private string email, book_title, order_status, book_price, book_id, order_id;
+        private string email, book_title, order_status, book_price, book_id, order_id, address;
         private DateTime order_date;
 
         public string Order_id
@@ -26,6 +26,12 @@ namespace IT140_MP
         {
             get { return book_id; }
             set { book_id = value; }
+        }
+
+        public string Address
+        {
+            get { return address; }
+            set { address = value; }
         }
         public string Email
         {

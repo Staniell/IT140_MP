@@ -67,7 +67,8 @@ namespace IT140_MP
                     Order_status = root[i].GetProperty("order_status").ToString(),
                     Order_id = root[i].GetProperty("order_id").ToString(),
                     Book_id = root[i].GetProperty("book_id").ToString(),
-                    Order_date = DateTime.Parse(root[i].GetProperty("order_date").ToString())
+                    Order_date = DateTime.Parse(root[i].GetProperty("order_date").ToString()),
+                    Address = root[i].GetProperty("home_address").ToString()
                 });
             }
 
