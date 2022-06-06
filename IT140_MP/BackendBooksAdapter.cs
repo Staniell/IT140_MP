@@ -69,7 +69,7 @@ namespace IT140_MP
                 editButton.Click += (sender, args) => this.updateBook(sList[position].Book_id);
                 deleteButton.Click += (sender, args) =>
                 {
-                    deleteBook(sList[position].Book_id);
+                    deleteBook(position);
                     this.NotifyDataSetChanged();
                 };
             }
@@ -86,10 +86,11 @@ namespace IT140_MP
             Intent i = new Intent(sContext, typeof(BackendBooksInput));
             i.PutExtra("book_id", book_id);
             sContext.StartActivity(i);
+            ((Activity)sContext).Finish();
         }
-        void deleteBook(string book_id)
+        void deleteBook(int book_id)
         {
-            AssetManager assets = Application.Context.Assets;
+            /*AssetManager assets = Application.Context.Assets;
             using StreamReader sr = new StreamReader(assets.Open("ip_address.txt"));
             ip = sr.ReadToEnd();
 
@@ -97,9 +98,9 @@ namespace IT140_MP
             response = (HttpWebResponse)request.GetResponse();
             res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
-            var result = reader.ReadToEnd();
+            var result = reader.ReadToEnd();*/
 
-            Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
+            Toast.MakeText(Application.Context, book_id.ToString(), ToastLength.Short).Show();
         }
     }
 }

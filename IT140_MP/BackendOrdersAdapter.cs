@@ -63,27 +63,26 @@ namespace IT140_MP
                 txtOrder_Status.Text = "Status: " + sList[position].Order_status;
                 txtBook_Title.Text = "Book Title: " + sList[position].Book_title;
                 txtOrder_Date.Text = "" + sList[position].Order_date;
-                if (sList[position].Order_status == "Shipped" || sList[position].Order_status == "Cancelled" || sList[position].Order_status == "Received")
+                if (!cancelButton.HasOnClickListeners && !shipButton.HasOnClickListeners)
                 {
-                    shipButton.Visibility = ViewStates.Gone;
-                    cancelButton.Visibility = ViewStates.Gone;
+                    if (sList[position].Order_status != "Pending")
+                    {
+                        shipButton.Background.SetTint(Android.Graphics.Color.DarkGray);
+                        shipButton.Enabled = false;
+                        cancelButton.Background.SetTint(Android.Graphics.Color.DarkGray);
+                        cancelButton.Enabled = false;
+                    }
+                    cancelButton.Click += (sender, args) =>
+                    {
+                        updateOrder(sList[position].Email, "Cancelled", sList[position].Order_id);
+                        this.NotifyDataSetChanged();
+                    };
+                    shipButton.Click += (sender, args) =>
+                    {
+                        updateOrder(sList[position].Email, "Shipped", sList[position].Order_id);
+                        this.NotifyDataSetChanged();
+                    };
                 }
-                cancelButton.Click += (sender, args) =>
-                {
-                    sList[position].Order_status = "Cancelled";
-                    updateOrder(sList[position].Email, "Cancelled", sList[position].Order_id);
-                    shipButton.Visibility = ViewStates.Gone;
-                    cancelButton.Visibility = ViewStates.Gone;
-                    this.NotifyDataSetChanged();
-
-                };
-                shipButton.Click += (sender, args) => {
-                    sList[position].Order_status = "Shipped";
-                    updateOrder(sList[position].Email, "Shipped", sList[position].Order_id);
-                    shipButton.Visibility = ViewStates.Gone;
-                    cancelButton.Visibility = ViewStates.Gone;
-                    this.NotifyDataSetChanged();
-                };
             }
             catch (Exception ex)
             {
@@ -106,7 +105,9 @@ namespace IT140_MP
             var result = reader.ReadToEnd();
 
             Toast.MakeText(Application.Context, "http://{ip}/IT140P/REST/update_order.php?email=" + userEmail + "&status_order=" + status + "&order_id=" + order_id, ToastLength.Short).Show();
-            
+            Intent i = new Intent(sContext, typeof(BackendOrdersActivity));
+            sContext.StartActivity(i);
+            ((Activity)sContext).Finish();
         }
 
     }

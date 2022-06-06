@@ -66,8 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Ship Order"
-            android:backgroundTint="@android:color/darker_gray"
-            android:enabled="false">
+            android:backgroundTint="@android:color/holo_orange_light">
         </Button>
         <Button
             android:id="@+id/shipCancelBtn"
@@ -75,8 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Cancel Order"
-            android:backgroundTint="@android:color/darker_gray"
-            android:enabled="false">
+            android:backgroundTint="@android:color/holo_red_light">
         </Button>
     </LinearLayout>
 </LinearLayout>

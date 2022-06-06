@@ -54,6 +54,7 @@ namespace IT140_MP
         {
             Intent i = new Intent(this, typeof(BackendBooksInput));
             StartActivity(i);
+            Finish();
         }
         private void fillData()
         {
