@@ -15,7 +15,7 @@ using System.IO;
 
 namespace IT140_MP
 {
-    [Activity(Label = "Backend Orders", MainLauncher = true)]
+    [Activity(Label = "Backend Orders")]
     public class BackendOrdersActivity : Activity
     {
         private ListView backendordersListView;

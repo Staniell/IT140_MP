@@ -69,30 +69,34 @@ namespace IT140_MP
                 txtOrder_Date.Text = "Order Date:" + sList[position].Order_date;
                 txtOrder_Id.Text = "Order ID:" + sList[position].Order_id;
 
-                if (sList[position].Order_status == "Shipped")
+
+                if (!cancelButton.HasOnClickListeners && !receiveButton.HasOnClickListeners)
                 {
-                    cancelButton.Enabled = false;
-                    cancelButton.Visibility = ViewStates.Invisible;
+                    if (sList[position].Order_status == "Shipped")
+                    {
+                        cancelButton.Enabled = false;
+                        cancelButton.Visibility = ViewStates.Invisible;
+                    }
+
+                    cancelButton.Click += (sender, args) =>
+                    {
+                    /*sList[position].Order_status = "Cancelled";*/
+                        updateOrder("Cancelled", sList[position].Order_id);
+                        cancelButton.Visibility = ViewStates.Invisible;
+                        receiveButton.Visibility = ViewStates.Invisible;
+                        this.NotifyDataSetChanged();
+                    };
+
+                    receiveButton.Click += (sender, args) =>
+                    {
+                    /*sList[position].Order_status = "Received";*/
+                        updateOrder("Received", sList[position].Order_id);
+                        cancelButton.Visibility = ViewStates.Invisible;
+                        receiveButton.Visibility = ViewStates.Invisible;
+                        this.NotifyDataSetChanged();
+
+                    };
                 }
-
-                cancelButton.Click += (sender, args) =>
-                {
-                    sList[position].Order_status = "Cancelled";
-                    updateOrder("Cancelled", sList[position].Order_id);
-                    cancelButton.Visibility = ViewStates.Invisible;
-                    receiveButton.Visibility = ViewStates.Invisible;
-                    this.NotifyDataSetChanged();
-                };
-
-                receiveButton.Click += (sender, args) =>
-                {
-                    sList[position].Order_status = "Received";
-                    updateOrder("Received", sList[position].Order_id);
-                    cancelButton.Visibility = ViewStates.Invisible;
-                    receiveButton.Visibility = ViewStates.Invisible;
-                    this.NotifyDataSetChanged();
-                    
-                };
 
 
             }
@@ -117,6 +121,10 @@ namespace IT140_MP
             var result = reader.ReadToEnd();
 
             Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
+
+            Intent i = new Intent(sContext, typeof(OrdersActivity));
+            sContext.StartActivity(i);
+            ((Activity)sContext).Finish();
         }
         
     }

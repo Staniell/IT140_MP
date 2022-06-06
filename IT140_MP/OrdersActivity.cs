@@ -15,7 +15,7 @@ using System.IO;
 
 namespace IT140_MP
 {
-    [Activity(Label = "OrdersLayout", ParentActivity = typeof(BookActivity))]
+    [Activity(Label = "OrdersLayout", ParentActivity = typeof(BookActivity), MainLauncher = true)]
     public class OrdersActivity : Activity
     {
         private ListView ordersListView;
