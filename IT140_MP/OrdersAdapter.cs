@@ -75,15 +75,21 @@ namespace IT140_MP
                     if (sList[position].Order_status == "Shipped")
                     {
                         cancelButton.Enabled = false;
-                        cancelButton.Visibility = ViewStates.Invisible;
+                        cancelButton.Visibility = ViewStates.Gone;
+                    }
+
+                    if (sList[position].Order_status == "Pending")
+                    {
+                        receiveButton.Enabled = false;
+                        receiveButton.Visibility = ViewStates.Gone;
                     }
 
                     cancelButton.Click += (sender, args) =>
                     {
                     /*sList[position].Order_status = "Cancelled";*/
                         updateOrder("Cancelled", sList[position].Order_id);
-                        cancelButton.Visibility = ViewStates.Invisible;
-                        receiveButton.Visibility = ViewStates.Invisible;
+                        cancelButton.Visibility = ViewStates.Gone;
+                        receiveButton.Visibility = ViewStates.Gone;
                         this.NotifyDataSetChanged();
                     };
 
@@ -91,8 +97,8 @@ namespace IT140_MP
                     {
                     /*sList[position].Order_status = "Received";*/
                         updateOrder("Received", sList[position].Order_id);
-                        cancelButton.Visibility = ViewStates.Invisible;
-                        receiveButton.Visibility = ViewStates.Invisible;
+                        cancelButton.Visibility = ViewStates.Gone;
+                        receiveButton.Visibility = ViewStates.Gone;
                         this.NotifyDataSetChanged();
 
                     };
