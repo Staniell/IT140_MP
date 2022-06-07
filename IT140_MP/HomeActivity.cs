@@ -34,6 +34,7 @@ namespace IT140_MP
             pendingBtn.Click += (sender, args) =>
             {
                 Intent i = new Intent(this, typeof(OrdersActivity));
+                i.PutExtra("Email", Intent.GetStringExtra("Email"));
                 StartActivity(i);
             };
 
@@ -43,16 +44,18 @@ namespace IT140_MP
                 StartActivity(i);
             };
 
-            //To do
+            
             doneBtn.Click += (sender, args) =>
             {
                 Intent i = new Intent(this, typeof(ReceivedOrdersActivity));
+                i.PutExtra("Email", Intent.GetStringExtra("Email"));
                 StartActivity(i);
             };
 
             orderBtn.Click += (sender, args) =>
             {
                 Intent i = new Intent(this, typeof(BookActivity));
+                i.PutExtra("Email", Intent.GetStringExtra("Email"));
                 StartActivity(i);
             };
 

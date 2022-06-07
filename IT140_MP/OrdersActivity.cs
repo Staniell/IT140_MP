@@ -52,6 +52,8 @@ namespace IT140_MP
 
         private void fillData()
         {
+            //Real request after demo
+            /*request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/fetch_orders.php?email=" + Intent.GetStringExtra("Email") + "&order_type=" + "pending|shipped");*/
             request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/fetch_orders.php?email=" + "sampleEmail" +"&order_type="+"pending|shipped");
             response = (HttpWebResponse)request.GetResponse();
             res = response.ProtocolVersion.ToString();

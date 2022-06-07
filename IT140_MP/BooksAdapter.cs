@@ -20,12 +20,14 @@ namespace IT140_MP
         public List<Books> sList;
         HttpWebResponse response;
         HttpWebRequest request;
+        string user_email;
         private Context sContext;
         string res, ip;
-        public BooksAdapter(Context context, List<Books> list)
+        public BooksAdapter(Context context, List<Books> list, string email)
         {
             sList = list;
             sContext = context;
+            user_email = email;
         }
         public override Books this[int position]
         {
@@ -96,7 +98,7 @@ namespace IT140_MP
             DateTime date1 = DateTime.Now;
             string date = date1.ToString("yyyy-MM-dd H:mm:ss");
 
-            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/add_order.php?book_id=" + bId + "&email=" + "sampleEmail" + "&order_status=" + "Pending" + "&order_date=" + date);
+            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/add_order.php?book_id=" + bId + "&email=" + user_email + "&order_status=" + "Pending" + "&order_date=" + date);
             response = (HttpWebResponse)request.GetResponse();
             res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
