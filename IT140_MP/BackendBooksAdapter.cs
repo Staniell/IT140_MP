@@ -66,12 +66,15 @@ namespace IT140_MP
                     int resourceId = (int)typeof(Resource.Drawable).GetField(resource).GetValue(null);
                     imgBook.SetImageResource(resourceId);
                 }
-                editButton.Click += (sender, args) => this.updateBook(sList[position].Book_id);
-                deleteButton.Click += (sender, args) =>
+                if (!editButton.HasOnClickListeners && !deleteButton.HasOnClickListeners)
                 {
-                    deleteBook(position);
-                    this.NotifyDataSetChanged();
-                };
+                    editButton.Click += (sender, args) => this.updateBook(sList[position].Book_id);
+                    deleteButton.Click += (sender, args) =>
+                    {
+                        deleteBook(position);
+                        this.NotifyDataSetChanged();
+                    };
+                }
             }
             catch (Exception ex)
             {
@@ -90,7 +93,7 @@ namespace IT140_MP
         }
         void deleteBook(int book_id)
         {
-            /*AssetManager assets = Application.Context.Assets;
+            AssetManager assets = Application.Context.Assets;
             using StreamReader sr = new StreamReader(assets.Open("ip_address.txt"));
             ip = sr.ReadToEnd();
 
@@ -98,9 +101,12 @@ namespace IT140_MP
             response = (HttpWebResponse)request.GetResponse();
             res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
-            var result = reader.ReadToEnd();*/
+            var result = reader.ReadToEnd();
 
-            Toast.MakeText(Application.Context, book_id.ToString(), ToastLength.Short).Show();
+            Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
+            Intent i = new Intent(sContext, typeof(BackendBooksActivity));
+            sContext.StartActivity(i);
+            ((Activity)sContext).Finish();
         }
     }
 }
