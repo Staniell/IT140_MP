@@ -29,23 +29,29 @@
             android:layout_weight="40"
             android:layout_marginTop="60dp"
             android:textAlignment="center"
-            android:textColor="#977563"
+            android:textColor="#ffff"
+            android:textStyle="bold"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
         <TextView
-        
-            android:id="@+id/book_price" 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:layout_weight="50"
-            android:layout_marginTop="60dp"
-            android:textColor="#977563"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-     </LinearLayout>
-        <Button
-            android:text="@string/order"
+            android:id="@+id/book_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonOrderBook" /> 
+            android:layout_weight="50"
+            android:layout_marginTop="60dp"
+            android:textColor="#ffff"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:background="#70006765"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+     </LinearLayout>
+    <Button
+        android:text="@string/order"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="162.0dp"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:background="#006765"
+        android:id="@+id/buttonOrderBook" /> 
     
 </LinearLayout>
  

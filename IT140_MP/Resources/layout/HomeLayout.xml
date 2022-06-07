@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homeorder"
+    android:background="@drawable/home"
     android:layout_gravity="center_horizontal">
 
     <TextView
@@ -13,7 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/email_txt" />
-    
+    <Button
+        android:text="@string/buy"
+        android:layout_width="159.2dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/order_btn"
+        android:backgroundTint="#bbdb98"
+        android:textColor="#977563"
+        android:layout_gravity="center"
+        android:layout_marginTop="230.9dp"
+        />
    
 
     <LinearLayout
@@ -23,7 +32,7 @@
         android:layout_width="365.5dp"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1"
-        android:layout_marginTop="150.6dp"
+        android:layout_marginTop="100.6dp"
         android:layout_gravity="center_horizontal">
 
 
@@ -52,15 +61,7 @@
         
     </LinearLayout>
 
-    <Button
-        android:text="@string/buy"
-        android:layout_width="228.2dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/order_btn"
-        android:backgroundTint="#bbdb98"
-        android:textColor="#977563"
-        android:layout_gravity="center"
-        android:layout_marginTop="22.9dp" />
+    
 
     <Button
         android:text="@string/logout"

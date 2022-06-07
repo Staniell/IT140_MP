@@ -5,29 +5,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login2"
+    android:background="@drawable/FinalLog"
     android:gravity="center_horizontal">
 
    
-    <ImageView
-        android:src="@drawable/logintext"
-        android:layout_width="207.5dp"
-        android:layout_height="89.5dp"
-        android:id="@+id/imageView2"
-        android:layout_marginTop="230.0dp" />
+   
 
-    <TextView
-        android:text="@string/email"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="321.5dp"
-        android:layout_height="wrap_content"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:textColor="#008080"
-        android:textStyle="bold"
-        android:id="@+id/textView1"
-        android:layout_gravity="center_horizontal"
-        />
+
     <EditText
         android:inputType="textEmailAddress"
         android:id="@+id/editText1"
@@ -37,17 +21,9 @@
         android:paddingLeft="10dp"
         android:background="@drawable/edittextbox"
         android:layout_marginBottom="@dimen/abc_text_size_body_2_material"
-        tools:ignore="HardcodedColor" />
-    <TextView
-        android:text="@string/password"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="332.5dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="#008080"
-        android:textStyle="bold"
-        android:id="@+id/textView2"
-         />
+        tools:ignore="HardcodedColor" 
+        android:layout_marginTop="300dp"/>
+   
     <EditText
         android:inputType="textPassword"
         android:layout_width="333.0dp"
@@ -57,13 +33,14 @@
         android:id="@+id/editText2"
         android:background="@drawable/edittextbox"
         android:layout_marginBottom="100dp"
+        android:layout_marginTop="40dp"
         tools:ignore="HardcodedColor"/>
     <Button
         android:text="@string/login"
         android:layout_width="131.0dp"
         android:textFontWeight="600"
         android:layout_height="wrap_content"
-        android:background="#ff7f27"
+        android:background="#006765"
         android:textColor="#ffff"
         android:layout_marginBottom="20dp"
         android:id="@+id/button1" />
@@ -73,7 +50,7 @@
         android:textFontWeight="600"
         android:layout_height="wrap_content"
         android:textColor="#ffff"
-        android:background="#ff7f27"
+        android:background="#006765"
         android:id="@+id/button2" />
 
 </LinearLayout>

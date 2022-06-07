@@ -5,39 +5,10 @@
 	xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-	android:background="@drawable/circles">
+	android:background="@drawable/FinalReg">
 
-    <ImageView
-        android:src="@drawable/logo"
-        android:layout_width="99.0dp"
-        android:layout_height="101.5dp"
-        android:id="@+id/imageView1"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="-20.5dp"
-        android:layout_marginTop="3.4dp" 
-        />
-    <TextView
-        android:text="REGISTER"
-        android:textColor="#008080"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="25dp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4" />
-
-    <TextView
-        android:text="@string/username"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_height="wrap_content"
-        android:layout_width="321.5dp"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:id="@+id/textView1" 
-        android:layout_gravity="center_horizontal"
-        />
+    
+   
     <EditText
         android:inputType="text"
         android:id="@+id/username_reg" 
@@ -45,17 +16,13 @@
         android:layout_height="36.5dp"
         android:textColor="#f85201"
         android:paddingLeft="10dp"
-        android:background="@drawable/edittextbox2"
+        android:background="@drawable/edittextbox"
+        android:layout_marginTop="245dp"
         android:layout_marginBottom="@dimen/abc_text_size_body_2_material"
         tools:ignore="HardcodedColor"/>
 
 
-	<TextView
-		android:text="@string/email"
-        android:layout_width="321.5dp"
-		android:textAppearance="?android:attr/textAppearanceLarge"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView2" />
+	
 	<EditText
 		android:inputType="textEmailAddress"
 		android:id="@+id/email_reg"		
@@ -63,16 +30,11 @@
         android:layout_height="36.5dp"
         android:textColor="#f85201"
         android:paddingLeft="10dp"
-        android:background="@drawable/edittextbox2"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edittextbox"
         android:layout_marginBottom="@dimen/abc_text_size_body_2_material"
         tools:ignore="HardcodedColor"/>
 
-    <TextView
-		android:text="@string/address"
-        android:layout_width="321.5dp"
-		android:textAppearance="?android:attr/textAppearanceLarge"
-		android:layout_height="wrap_content"
-		android:id="@+id/address_view" />
 	<EditText
 		android:inputType="textEmailAddress"
 		android:id="@+id/address_txt"		
@@ -80,17 +42,13 @@
         android:layout_height="36.5dp"
         android:textColor="#f85201"
         android:paddingLeft="10dp"
-        android:background="@drawable/edittextbox2"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edittextbox"
         android:layout_marginBottom="@dimen/abc_text_size_body_2_material"
         tools:ignore="HardcodedColor"/>
 
 
-	<TextView
-		android:text="@string/password"
-		android:textAppearance="?android:attr/textAppearanceLarge"
-		android:layout_width="321.5dp"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView3" />
+	
 	<EditText
 		android:inputType="textPassword"
 		android:id="@+id/password_reg" 		
@@ -98,7 +56,8 @@
         android:layout_height="36.5dp"
         android:textColor="#f85201"
         android:paddingLeft="10dp"
-        android:background="@drawable/edittextbox2"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edittextbox"
         android:layout_marginBottom="@dimen/abc_text_size_body_2_material"
         tools:ignore="HardcodedColor"/>
 
@@ -106,7 +65,7 @@
 
 	<Button
 		android:text="@string/register"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
 		android:layout_width="131.0dp"
         android:textFontWeight="600"
         android:layout_height="wrap_content"
