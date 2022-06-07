@@ -1,40 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/linearLayout1"
     >
-    <ImageView
-        android:background="@drawable/wood"
-        android:layout_width="200.2dp"
-        android:layout_height="170.4dp"
-        android:layout_weight="10"
-        android:id="@+id/imageViewBooks"
-        android:layout_margin="10dp"
-        android:paddingTop="65dp"
-        android:paddingBottom="30dp"
-        />
-
-    <TextView
-        android:id="@+id/book_title"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="40"
-        android:layout_marginTop="60dp"
-        android:textAlignment="center"
-        android:textColor="#977563"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
-    <TextView
+        android:id="@+id/linearLayout1" >
+        <ImageView
+            android:background="@drawable/wood"
+            android:layout_width="200.2dp"
+            android:layout_height="170.4dp"
+            android:layout_weight="10"
+            android:id="@+id/imageViewBooks"
+            android:layout_margin="10dp"
+            android:paddingTop="65dp"
+            android:paddingBottom="30dp"
+            />
+
+        <TextView
+            android:id="@+id/book_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="40"
+            android:layout_marginTop="60dp"
+            android:textAlignment="center"
+            android:textColor="#977563"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+        <TextView
         
-        android:id="@+id/book_price" 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:layout_weight="50"
-        android:layout_marginTop="60dp"
-        android:textColor="#977563"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
-        
+            android:id="@+id/book_price" 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_weight="50"
+            android:layout_marginTop="60dp"
+            android:textColor="#977563"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+     </LinearLayout>
+        <Button
+            android:text="@string/order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonOrderBook" /> 
+    
 </LinearLayout>
  

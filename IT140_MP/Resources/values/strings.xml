@@ -24,4 +24,5 @@
 	<string name="bookName">Book Name</string>
 	<string name="bookPrice">Price</string>
 	<string name="address">Home Address</string>
+	<string name="order">Order</string>
 </resources>

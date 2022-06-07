@@ -68,9 +68,7 @@ namespace IT140_MP
                     Book_img = root[i].GetProperty("book_img").ToString(),
                 });
             }
-
-
-
         }
+
     }
 }
