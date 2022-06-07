@@ -103,6 +103,10 @@ namespace IT140_MP
             var result = reader.ReadToEnd();
 
             Toast.MakeText(Application.Context, "Added Order", ToastLength.Short).Show();
+            Intent i = new Intent(sContext, typeof(OrdersActivity));
+            sContext.StartActivity(i);
+            ((Activity)sContext).Finish();
         }
+
     }
 }
