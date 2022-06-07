@@ -94,8 +94,9 @@ namespace IT140_MP
             using StreamReader sr = new StreamReader(assets.Open("ip_address.txt"));
             ip = sr.ReadToEnd();
             DateTime date1 = DateTime.Now;
+            string date = date1.ToString("yyyy-MM-dd H:mm:ss");
 
-            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/add_order.php?book_id=" + bId + "&email=" + "sampleEmail" + "&order_status=" + "Pending" + "&order_date=" + date1);
+            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/add_order.php?book_id=" + bId + "&email=" + "sampleEmail" + "&order_status=" + "Pending" + "&order_date=" + date);
             response = (HttpWebResponse)request.GetResponse();
             res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
