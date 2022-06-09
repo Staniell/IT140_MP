@@ -38,9 +38,7 @@ namespace IT140_MP
 
             fillData();
 
-            //To be changed after demo
-            /*adapter = new BooksAdapter(this, mlist, Intent.GetStringExtra("Email"));*/
-            adapter = new BooksAdapter(this, mlist, "sampleEmail");
+            adapter = new BooksAdapter(this, mlist, Intent.GetStringExtra("Email"));
             booksListView.Adapter = adapter;
 
 

@@ -11,7 +11,7 @@ using System.Text;
 
 namespace IT140_MP
 {
-    [Activity(Label = "HomeActivity",MainLauncher = true)]
+    [Activity(Label = "HomeActivity")]
     public class HomeActivity : Activity
     {
         TextView emailTxt;

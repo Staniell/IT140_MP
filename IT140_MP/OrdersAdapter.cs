@@ -21,12 +21,14 @@ namespace IT140_MP
         public List<Orders> sList;
         HttpWebResponse response;
         HttpWebRequest request;
+        string user_email;
         private Context sContext;
         string res, ip;
-        public OrdersAdapter(Context context, List<Orders> list)
+        public OrdersAdapter(Context context, List<Orders> list, string email)
         {
             sList = list;
             sContext = context;
+            user_email = email;
         }
         public override Orders this[int position]
         {
@@ -120,7 +122,7 @@ namespace IT140_MP
             using StreamReader sr = new StreamReader(assets.Open("ip_address.txt"));
             ip = sr.ReadToEnd();
 
-            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/update_order.php?email=" + "sampleEmail" + "&status_order=" + status + "&order_id=" + order_id);
+            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/update_order.php?email=" + user_email + "&status_order=" + status + "&order_id=" + order_id);
             response = (HttpWebResponse)request.GetResponse();
             res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());

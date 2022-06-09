@@ -45,16 +45,15 @@ namespace IT140_MP
 
 
             
-            adapter = new OrdersAdapter(this, mlist);
+            adapter = new OrdersAdapter(this, mlist, Intent.GetStringExtra("Email"));
             ordersListView.Adapter = adapter;
         }
 
 
         private void fillData()
         {
-            //Real request after demo
-            /*request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/fetch_orders.php?email=" + Intent.GetStringExtra("Email") + "&order_type=" + "pending|shipped");*/
-            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/fetch_orders.php?email=" + "sampleEmail" +"&order_type="+"pending|shipped");
+            
+            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/fetch_orders.php?email=" + Intent.GetStringExtra("Email") + "&order_type=" + "pending|shipped");
             response = (HttpWebResponse)request.GetResponse();
             res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());

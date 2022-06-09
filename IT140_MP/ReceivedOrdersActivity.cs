@@ -51,9 +51,8 @@ namespace IT140_MP
 
         private void getOrders()
         {
-            //real request after demo
-            /*request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/fetch_orders.php?email=" + Intent.GetStringExtra("Email") + "&order_type=" + "Received");*/
-            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/fetch_orders.php?email=" + "sampleEmail" + "&order_type=" +"Received");
+            
+            request = (HttpWebRequest)WebRequest.Create($"http://{ip}/IT140P/REST/fetch_orders.php?email=" + Intent.GetStringExtra("Email") + "&order_type=" + "Received");
             response = (HttpWebResponse)request.GetResponse();
             res = response.ProtocolVersion.ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
