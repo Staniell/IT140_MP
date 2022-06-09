@@ -106,6 +106,7 @@ namespace IT140_MP
 
             Toast.MakeText(Application.Context, "Added Order", ToastLength.Short).Show();
             Intent i = new Intent(sContext, typeof(OrdersActivity));
+            i.PutExtra("Email", user_email);
             sContext.StartActivity(i);
             ((Activity)sContext).Finish();
         }
